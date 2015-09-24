@@ -1,0 +1,18 @@
+name := "PlayJavaEbeanSeed"
+
+version := "1.1"
+
+lazy val root = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
+
+scalaVersion := "2.11.6"
+
+libraryDependencies ++= Seq(
+  javaJdbc,
+  cache,
+  javaWs,
+  "org.mockito" % "mockito-all" % "1.9.5"
+)
+
+// Play provides two styles of routers, one expects its actions to be injected, the
+// other, legacy style, accesses its actions statically.
+// routesGenerator := InjectedRoutesGenerator
